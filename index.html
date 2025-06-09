@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+<style>
+  /* Общий сброс и базовая стилизация */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a {
+    color: #25D366;
+    text-decoration: none;
+  }
+  ul, ol {
+    margin-left: 1.5em;
+  }
+  section {
+    padding: 3em 1em;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1, h2 {
+    color: #25D366;
+    margin-bottom: 1em;
+  }
+  .btn {
+    display: inline-block;
+    background: #25D366;
+    color: #000;
+    padding: 0.75em 1.5em;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 1em;
+    transition: background 0.3s ease;
+  }
+  .btn:hover {
+    background: #1ebe5d;
+  }
+  .btn-lg {
+    font-size: 1.1rem;
+  }
+
+  /* Контейнер */
+  .content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding-top: 3em;
+  }
+
+  /* Анимация появления */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Фон-код (матрица) */
+  #code-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0d0d0d;
+    pointer-events: none;
+  }
+</style>
+
+</head>
+<body>
+  <canvas id="code-bg"></canvas>
+
+  <div class="content-wrapper">
+    <header class="hero fade-in">
+      <h1>$ Создай Telegram-бота за 5 дней</h1>
+      <p class="tagline">Бесплатный мини-курс для абсолютных новичков</p>
+      <a href="#signup" class="btn btn-lg">Записаться бесплатно</a>
+    </header>
+
+    <section class="for-whom fade-in">
+  <h2>> Кому подойдёт курс?</h2>
+  <ul>
+    <li><i data-feather="activity"></i> Ты только начинаешь в программировании</li>
+    <li><i data-feather="smartphone"></i> Хочешь создать Telegram-бота с нуля</li>
+    <li><i data-feather="settings"></i> Хочешь практику, а не теорию</li>
+  </ul>
+</section>
+
+<section class="benefits fade-in">
+  <h2>> Что ты получишь:</h2>
+  <ul>
+    <li><i data-feather="zap"></i> Простая инструкция шаг за шагом</li>
+    <li><i data-feather="cpu"></i> Настоящие проекты на Python</li>
+    <li><i data-feather="message-circle"></i> Поддержка в Telegram-чате</li>
+  </ul>
+</section>
+
+<section class="inside-course fade-in">
+  <h2>> Что внутри:</h2>
+  <ul>
+    <li><i data-feather="play-circle"></i> 5 коротких видеоуроков</li>
+    <li><i data-feather="code"></i> Практические задания</li>
+    <li><i data-feather="send"></i> Готовый бот в конце курса</li>
+  </ul>
+</section>
+
+<section class="program fade-in">
+  <h2>> Программа курса</h2>
+  <ol>
+    <li>Введение: как работают боты</li>
+    <li>Настройка окружения</li>
+    <li>Создание простого бота</li>
+    <li>Добавление логики</li>
+    <li>Публикация и продвижение</li>
+  </ol>
+</section>
+
+<section class="reviews fade-in">
+  <h2>> Отзывы</h2>
+  <blockquote>“Я сделал своего первого бота за вечер!” — Антон В.</blockquote>
+  <blockquote>“Очень понятный курс, рекомендую.” — Инесса Л.</blockquote>
+</section>
+
+<section class="instructor fade-in">
+  <h2>> Автор курса</h2>
+  <p>Привет! Я Артём — фронтенд-разработчик, который обожает Telegram-ботов. Сделал 20+ ботов, научу и тебя <i data-feather="rocket"></i></p>
+</section>
+
+<section class="signup fade-in" id="signup">
+  <h2>> Присоединяйся бесплатно</h2>
+  <a href="https://wa.me/79261234567?text=Привет!%20Хочу%20присоединиться%20к%20курсу%20по%20созданию%20Telegram-ботов." target="_blank" rel="noopener noreferrer" class="btn btn-lg">
+    <i data-feather="phone"></i>
+    Написать в WhatsApp
+  </a>
+</section>
+
+<section class="bonuses fade-in">
+  <h2>> Бонусы при прохождении</h2>
+  <ul>
+    <li><i data-feather="gift"></i> Чек-лист по созданию ботов</li>
+    <li><i data-feather="package"></i> Пак шаблонов для быстрого старта</li>
+    <li><i data-feather="award"></i> Скидка на следующий курс</li>
+  </ul>
+</section>
+
+    <section class="faq fade-in">
+      <h2>> Часто задаваемые вопросы</h2>
+      <ul>
+        <li><strong>Сколько длится курс?</strong> — 5 дней, по 15 минут в день.</li>
+        <li><strong>Нужен ли опыт в программировании?</strong> — Нет, всё с нуля.</li>
+        <li><strong>Что если не успею?</strong> — Доступ остаётся у тебя навсегда.</li>
+      </ul>
+    </section>
+
+    <section class="countdown fade-in">
+      <h2>> До старта потока осталось:</h2>
+      <div id="timer" class="neon" style="font-size: 2rem; margin-top: 0.5em;">00:00:00</div>
+    </section>
+
+    <section class="final-cta fade-in">
+      <h2>> Готов прокачаться?</h2>
+      <a href="https://wa.me/79261234567?text=Привет!%20Хочу%20присоединиться%20к%20курсу%20по%20созданию%20Telegram-ботов." target="_blank" class="btn btn-lg">
+        Стартуй сейчас!
+      </a>
+    </section>
+
+<footer class="fade-in neon">
+  <p>© 2025 Курс по созданию Telegram-ботов</p>
+</footer>
+  </div>
+
+  <script>
+    feather.replace();
+
+    // Fade-in анимации
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const onScroll = () => {
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    // Фоновая матрица
+    const canvas = document.getElementById('code-bg');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    const letters = '01';
+    const fontSize = 14;
+    let columns;
+    let drops;
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      columns = Math.floor(width / fontSize);
+      drops = new Array(columns).fill(1);
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(13, 13, 13, 0.1)';
+      ctx.fillRect(0, 0, width, height);
+      ctx.fillStyle = '#25D366';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    resize();
+    setInterval(draw, 40);
+    window.addEventListener('resize', resize);
+
+    // Таймер обратного отсчёта
+    const timerEl = document.getElementById('timer');
+    const deadline = new Date();
+    deadline.setHours(deadline.getHours() + 48); // 48 часов на отсчёт
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = deadline - now;
+      if (diff <= 0) {
+        timerEl.textContent = '00:00:00';
+        return;
+      }
+      const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
+      const minutes = String(Math.floor((diff / 1000 / 60) % 60)).padStart(2, '0');
+      const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+      timerEl.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
